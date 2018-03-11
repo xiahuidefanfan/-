@@ -26,14 +26,16 @@ public class MergeSort implements SortInterface{
 	 * @param r：数组解结束下标
 	 */
 	private <T extends Comparable<T>> void mergeSort(T[] arr, int l, int r) {
-		if(l >= r) {
+		if(l == r) {
 			return;
 		}
 		
 		int middle = (l+r)/2;
 		mergeSort(arr,l,middle);
 		mergeSort(arr, middle+1, r);
-		merge(arr, l, middle, r);
+		if(arr[middle].compareTo(arr[middle+1]) > 0) {
+			merge(arr, l, middle, r);
+		}
 	}
 
 	/**
