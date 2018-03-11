@@ -13,9 +13,12 @@ public class BubbleSort implements SortInterface {
 	 */
 	@Override
 	public <T extends Comparable<T>> void sort(T[] arr, int n) {
-		for(int i = n; i > 1; i--) {
-			for(int j = 0; j < i && arr[j].compareTo(arr[j+1]) > 0; j++) {
-				SortTestHelper.changeValue(arr, j, j+1);
+		for(int i = n -1; i > 1; i--) {
+			int j = 0;
+			for( ; j < i; j++) {
+				if(arr[j].compareTo(arr[j+1]) > 0) {
+					SortTestHelper.changeValue(arr, j, j+1);
+				}
 			}
 		}
 	}
