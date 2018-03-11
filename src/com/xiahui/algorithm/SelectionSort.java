@@ -2,6 +2,7 @@ package com.xiahui.algorithm;
 
 /**
  * 选择排序实现类
+ * 算法复杂度为O(n2)
  * @author xiahui
  *
  */

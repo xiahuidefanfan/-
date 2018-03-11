@@ -61,5 +61,17 @@ public class SortTest {
 			System.out.println(m);
 		}
 	}
+	
+	/**
+	 * œ£∂˚≈≈–Ú≤‚ ‘
+	 */
+	@Test
+	public void ShellSortTest() {
+		Integer[] arr = SortTestHelper.generateRandomArray(ARRAY_LENGTH, ARRAY_VALUE_MIN,ARRAY_VALUE_MAX);
+		SortTestHelper.testSort(new ShellSort(), arr, ARRAY_LENGTH);
+		for (Integer m : arr) {
+			System.out.println(m);
+		}
+	}
 
 }

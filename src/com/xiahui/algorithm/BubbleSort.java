@@ -2,7 +2,7 @@ package com.xiahui.algorithm;
 
 /**
  * 冒泡排序实现类
- * 实现原理：每轮找到最大值，冒泡到数组最后的位置
+ * 算法复杂度为O(n2)
  * @author xiahui
  *
  */

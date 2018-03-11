@@ -1,8 +1,8 @@
 package com.xiahui.algorithm;
 
 /**
- * 查入排序实现类
- * 实现原理：从左到右比较相邻两个数的大小，将较小的数向前找到它的合适位置
+ * 插入排序实现类
+ * 算法复杂度为O(n2)
  * @author xiahui
  *
  */
