@@ -11,14 +11,14 @@ public class SelectionSort implements SortInterface{
 	/**
 	 * 选择排序的核心是找最小
 	 */
-	public <T extends Comparable<T>> void sort(T[] arr, int n) {
-		for( int i = 0; i < n; i++ ) {
+	public <T extends Comparable<T>> void sort(T[] arr, int l, int r) {
+		for( int i = l; i < r; i++ ) {
 			
 			int minIndex = i;
 			/**
 			 * 通过每一轮遍历，将值最小的值得下表找到，并赋值给minIndex
 			 */
-			for (int j = i+1; j < n; j++) {
+			for (int j = i+1; j < r; j++) {
 				if( arr[j].compareTo(arr[minIndex]) < 0) {
 					minIndex = j;
 				}
@@ -32,15 +32,6 @@ public class SelectionSort implements SortInterface{
 			arr[i] = tempMin;
 		}
 		
-	}
-	
-	public static void main(String[] args) {
-		Integer[] a = SortTestHelper.generateRandomArray(10, 1, 100);
-		SelectionSort selectionSort = new SelectionSort();
-		selectionSort.sort(a,10);
-		for (Integer m : a) {
-			System.out.println(m);
-		}
 	}
 
 }

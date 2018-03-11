@@ -12,8 +12,8 @@ public class InsertionSort implements SortInterface {
 	 * 插入排序的核心是找位置
 	 */
 	@Override
-	public <T extends Comparable<T>> void sort(T[] arr, int n) {
-		for(int i = 1; i < n; i++){
+	public <T extends Comparable<T>> void sort(T[] arr, int l, int r) {
+		for(int i = l; i < r; i++){
 			T temp = arr[i];
 			int j;
 			/**

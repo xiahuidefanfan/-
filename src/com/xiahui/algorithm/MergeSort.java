@@ -12,11 +12,11 @@ public class MergeSort implements SortInterface{
 	 * 归并算法实现方法
 	 */
 	@Override
-	public <T extends Comparable<T>> void sort(T[] arr, int n) {
-		if(n < 1) {
+	public <T extends Comparable<T>> void sort(T[] arr, int l, int r) {
+		if(r < 1) {
 			return ;
 		}
-		mergeSort(arr, 0, n-1);
+		mergeSort(arr, l, r-1);
 	}
 	
 	/**

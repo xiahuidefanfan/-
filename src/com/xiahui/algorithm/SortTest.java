@@ -27,15 +27,21 @@ public class SortTest {
 	private static final int ARRAY_VALUE_MAX= 100;
 	
 	/**
+	 * 数组排序起始下标（包含）
+	 */
+	private static final int TEST_BEGIN_INDEX = 0;
+	
+	/**
+	 * 数组排序结束下标（不包含）
+	 */
+	private static final int TEST_ARRAY_LENGTH = 10;
+	
+	/**
 	 * 选择排序测试
 	 */
 	@Test
 	public void SelectionSortTest() {
-		Integer[] arr = SortTestHelper.generateRandomArray(ARRAY_LENGTH, ARRAY_VALUE_MIN,ARRAY_VALUE_MAX);
-		SortTestHelper.testSort(new SelectionSort(), arr, ARRAY_VALUE_MAX);
-		for (Integer m : arr) {
-			System.out.println(m);
-		}
+		doTest(new SelectionSort());
 	}
 	
 	/**
@@ -43,11 +49,7 @@ public class SortTest {
 	 */
 	@Test
 	public void InsertionSortTest() {
-		Integer[] arr = SortTestHelper.generateRandomArray(ARRAY_LENGTH, ARRAY_VALUE_MIN,ARRAY_VALUE_MAX);
-		SortTestHelper.testSort(new InsertionSort(), arr, ARRAY_LENGTH);
-		for (Integer m : arr) {
-			System.out.println(m);
-		}
+		doTest(new InsertionSort());
 	}
 	
 	/**
@@ -55,11 +57,7 @@ public class SortTest {
 	 */
 	@Test
 	public void BubbleSortTest() {
-		Integer[] arr = SortTestHelper.generateRandomArray(ARRAY_LENGTH, ARRAY_VALUE_MIN,ARRAY_VALUE_MAX);
-		SortTestHelper.testSort(new BubbleSort(), arr, ARRAY_LENGTH);
-		for (Integer m : arr) {
-			System.out.println(m);
-		}
+		doTest(new BubbleSort());
 	}
 	
 	/**
@@ -67,11 +65,7 @@ public class SortTest {
 	 */
 	@Test
 	public void ShellSortTest() {
-		Integer[] arr = SortTestHelper.generateRandomArray(ARRAY_LENGTH, ARRAY_VALUE_MIN,ARRAY_VALUE_MAX);
-		SortTestHelper.testSort(new ShellSort(), arr, ARRAY_LENGTH);
-		for (Integer m : arr) {
-			System.out.println(m);
-		}
+		doTest(new ShellSort());
 	}
 	
 	/**
@@ -79,11 +73,18 @@ public class SortTest {
 	 */
 	@Test
 	public void MergeSortTest() {
+		doTest(new MergeSort());
+	}
+	
+	/**
+	 * 测试具体实现方法
+	 * @param sortImpl
+	 */
+	private void doTest(SortInterface sortImpl) {
 		Integer[] arr = SortTestHelper.generateRandomArray(ARRAY_LENGTH, ARRAY_VALUE_MIN,ARRAY_VALUE_MAX);
-		SortTestHelper.testSort(new MergeSort(), arr, ARRAY_LENGTH);
+		SortTestHelper.testSort(sortImpl, arr, TEST_BEGIN_INDEX, TEST_ARRAY_LENGTH);
 		for (Integer m : arr) {
 			System.out.println(m);
 		}
 	}
-	
 }

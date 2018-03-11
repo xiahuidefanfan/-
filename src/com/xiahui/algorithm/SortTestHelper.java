@@ -2,6 +2,11 @@ package com.xiahui.algorithm;
 
 import java.util.Random;
 
+/**
+ * 排序工具类
+ * @author xiahui
+ *
+ */
 public class SortTestHelper{
 	
 	/**
@@ -28,13 +33,13 @@ public class SortTestHelper{
 	 * @param arr
 	 * @param n
 	 */
-	public static <T extends Comparable<T>> void testSort(SortInterface sortImpl,T[] arr, int n ) {
+	public static <T extends Comparable<T>> void testSort(SortInterface sortImpl,T[] arr, int l, int r) {
 		System.out.println("测试开始");
 		long beginTime = System.currentTimeMillis();
-		sortImpl.sort(arr, n);
+		sortImpl.sort(arr, l, r);
 		long endTime = System.currentTimeMillis();
 		System.out.println("测试结束");
-		assert(isSorted(arr,n));
+		assert(isSorted(arr,r));
 		System.out.println("测试耗时：" + (endTime - beginTime));
 	}
 	

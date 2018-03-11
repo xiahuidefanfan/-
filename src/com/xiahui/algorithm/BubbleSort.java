@@ -12,8 +12,8 @@ public class BubbleSort implements SortInterface {
 	 * 冒泡排序的核心是找最大值
 	 */
 	@Override
-	public <T extends Comparable<T>> void sort(T[] arr, int n) {
-		for(int i = n -1; i > 1; i--) {
+	public <T extends Comparable<T>> void sort(T[] arr, int l, int r) {
+		for(int i = r -1; i > l; i--) {
 			int j = 0;
 			for( ; j < i; j++) {
 				if(arr[j].compareTo(arr[j+1]) > 0) {
