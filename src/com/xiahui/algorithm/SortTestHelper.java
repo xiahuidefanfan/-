@@ -5,7 +5,7 @@ import java.util.Random;
 public class SortTestHelper{
 	
 	/**
-	 * 获取随机制定范围内的Integer数组
+	 * 获取随机指定范围内的Integer数组
 	 * @param n
 	 * @param rangL
 	 * @param rangR

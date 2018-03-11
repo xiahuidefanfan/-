@@ -5,7 +5,7 @@ import org.junit.Test;
 /**
  * ≈≈–Ú≤‚ ‘¿‡
 
- * @author hp
+ * @author xiahui
  *
  */
 public class SortTest {
@@ -73,5 +73,17 @@ public class SortTest {
 			System.out.println(m);
 		}
 	}
-
+	
+	/**
+	 * πÈ≤¢≈≈–Ú≤‚ ‘
+	 */
+	@Test
+	public void MergeSortTest() {
+		Integer[] arr = SortTestHelper.generateRandomArray(ARRAY_LENGTH, ARRAY_VALUE_MIN,ARRAY_VALUE_MAX);
+		SortTestHelper.testSort(new MergeSort(), arr, ARRAY_LENGTH);
+		for (Integer m : arr) {
+			System.out.println(m);
+		}
+	}
+	
 }
