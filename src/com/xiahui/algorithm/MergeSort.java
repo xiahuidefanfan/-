@@ -26,7 +26,7 @@ public class MergeSort implements SortInterface{
 	 * @param r：数组解结束下标
 	 */
 	private <T extends Comparable<T>> void mergeSort(T[] arr, int l, int r) {
-		if(l == r) {
+		if(l >= r) {
 			return;
 		}
 		

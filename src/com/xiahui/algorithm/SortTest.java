@@ -29,7 +29,7 @@ public class SortTest {
 	/**
 	 * 数组排序起始下标（包含）
 	 */
-	private static final int TEST_BEGIN_INDEX = 5;
+	private static final int TEST_BEGIN_INDEX = 0;
 	
 	/**
 	 * 数组排序结束下标（不包含）
@@ -77,12 +77,29 @@ public class SortTest {
 	}
 	
 	/**
+	 * 快速排序测试
+	 */
+	@Test
+	public void QuickSortTest() {
+		doTest(new QuickSort());
+	}
+	
+	/**
 	 * 测试具体实现方法
-	 * @param sortImpl
 	 */
 	private void doTest(SortInterface sortImpl) {
+		/**
+		 * 第一步：随机生成数组
+		 */
 		Integer[] arr = SortTestHelper.generateRandomArray(ARRAY_LENGTH, ARRAY_VALUE_MIN,ARRAY_VALUE_MAX);
+		/**
+		 * 第二步：排序
+		 */
 		SortTestHelper.testSort(sortImpl, arr, TEST_BEGIN_INDEX, TEST_ARRAY_LENGTH);
+		
+		/**
+		 * 查看生成数组信息
+		 */
 		for (Integer m : arr) {
 			System.out.println(m);
 		}
