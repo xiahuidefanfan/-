@@ -29,7 +29,7 @@ public class SortTest {
 	/**
 	 * 数组排序起始下标（包含）
 	 */
-	private static final int TEST_BEGIN_INDEX = 0;
+	private static final int TEST_BEGIN_INDEX = 5;
 	
 	/**
 	 * 数组排序结束下标（不包含）
